@@ -3,11 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Poject</title>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-     <h1>Welcome to Github</h1>
-    <p>This is my first HTML page.</p>
-    <div>this is the new div</div>
+
+<header class="main-header">
+    <div class="header-left">
+        <h1>Taniya-Portfolio</h1>
+    </div>
+
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#project">Project</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+</header>
+
+<div class="mobile-nav" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#project">Project</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<main>
+
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="fade-in delay-2">Hi, I'm Taniya</h2>
+            <p class="fade-in delay">Welcome to my Portfolio - I build things, learn new skills, and solve problems.</p>
+            <a href="#contact" class="btn fade-in delay-2">Contact Me!</a>
+
+            <a href="/docs/Taniya _khutar_Resume.pdf" download class="btn fade-in delay-2">Download Resume</a>
+            <a href="/docs/Taniya _khutar_Resume.pdf" target="_blank" class="btn fade-in delay-2">View Resume</a>
+        </div>
+    </section>
+
+    
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skill-item">
+            <img src="https://blog.zegocloud.com/wp-content/uploads/2024/03/types-of-web-development-services.jpg">
+            <h3>Web Development</h3>
+            <p>Proficient in HTML, CSS, Javascript, Bootstrap, and responsive web design.</p>
+        </div>
+
+        <div class="skill-item">
+            <img src="https://i0.wp.com/plopdo.com/wp-content/uploads/2021/10/What-is-back-end-development-2.jpg?fit=805%2C428&ssl=1">
+            <h3>Backend Development</h3>
+            <p>Experienced with PHP, MySQL, and server-side programming for dynamic applications.</p>
+        </div>
+
+       
+
+        <div class="skill-item">
+            <img src="https://www.ilovephd.com/wp-content/uploads/2025/07/An-AI-machine-writing-code-for-AI-project.jpg">
+            <h3>AI & Project Work</h3>
+            <p>Experience in AI concepts and developing the MindMatrix web portal.</p>
+        </div>
+    </section>
+
+    
+  <section id="project">
+    <h2>Projects</h2>
+
+    <div class="project-container">
+
+        <div class="project-item" style="background: linear-gradient(135deg, #004e92, #00aaff);">
+            <i class="fas fa-folder-open fa-4x"></i>
+            <h3>My Collection</h3>
+            <p>Virtual storage space for organizing user resources.</p>
+        </div>
+
+        <div class="project-item" style="background: linear-gradient(135deg, #ff416c, #ff4b2b);">
+            <i class="fas fa-brain fa-4x"></i>
+            <h3>MindMatrix</h3>
+            <p>Mental health portal for therapist-patient communication.</p>
+        </div>
+
+        <div class="project-item" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">
+            <i class="fas fa-robot fa-4x"></i>
+            <h3>AI Project</h3>
+            <p>AI-based solution for intelligent data processing and automation.</p>
+        </div>
+
+    </div>
+ </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+</main>
+
+
+<script>
+function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("show");
+}
+</script>
+
+<script>
+const form = document.querySelector("#contact form");
+
+const nameMsg = document.createElement("div");
+const emailMsg = document.createElement("div");
+const messageMsg = document.createElement("div");
+
+
+form.querySelector('input[type="text"]').after(nameMsg);
+form.querySelector('input[type="email"]').after(emailMsg);
+form.querySelector('textarea').after(messageMsg);
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = form.querySelector('input[type="text"]').value.trim();
+    const email = form.querySelector('input[type="email"]').value.trim();
+    const message = form.querySelector('textarea').value.trim();
+
+   es
+    nameMsg.innerText = "";
+    emailMsg.innerText = "";
+    messageMsg.innerText = "";
+
+    let valid = true;
+
+   
+    if(name === "") {
+        nameMsg.innerText = "Please enter your name";
+        valid = false;
+    }
+
+   
+    if(email === "") {
+        emailMsg.innerText = "Please enter your email";
+        valid = false;
+    } else {
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if(!email.match(emailPattern)) {
+            emailMsg.innerText = "Please enter a valid email address";
+            valid = false;
+        }
+    }
+
+    
+    if(message === "") {
+        messageMsg.innerText = "Please enter your message";
+        valid = false;
+    }
+
+    if(valid) {
+       
+        alert("Thank you! Your message has been sent successfully.");
+
+        
+        form.reset();
+    }
+});
+</script>
+
+
+<footer>
+  <div class="footer-accounts">
+    <a href="https://twitter.com/YourProfile" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/taniya-khutar-6882b3253/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/YourProfile" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/ppi-sideproject/Unlock_Project" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+
+  <div class="footer-contact">
+    <span>E-mail: <a href=mailto:taniyakhutar@gmail.com>taniyakhutar@gmail.com</a></span>
+    <span>Phone: <a href="tel:+919326288607">+919326288607</a></span>
+  </div>
+
+  <div class="footer-copy">
+    &copy;2025 Taniya Khutar | Designed and Developed by Taniya Khutar
+  </div>
+</footer>
+
+
 </body>
 </html>
