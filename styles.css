@@ -33,6 +33,26 @@ header {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+.header-logo {
+    /* Adjust this value to control the size */
+    height: 40px; 
+    width: auto; /* Maintains the aspect ratio */
+    margin-right: 10px; /* Adds space between the logo and the text */
+}
+
+.logo-container {
+    /* Use flexbox to put items side-by-side */
+    display: flex; 
+    /* Vertically center the items (logo and h1 text) */
+    align-items: center; 
+}
+
+/* Optional: Clean up the h1 margin */
+.logo-container h1 {
+    margin: 0; 
+    font-size: 1.5em; /* Adjust font size as needed */
+}
+
 
 .navbar {
     display: flex;
