@@ -183,15 +183,17 @@
  </section>
     
     <section id="contact">
-        <h2>Contact Me</h2>
+    <h2>Contact Me</h2>
 
-        <form>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+    <form id="contactForm">
+        <input type="text" placeholder="Your Name" name="name">
+        <input type="email" placeholder="Your Email" name="email">
+        <input type="tel" placeholder="Your Phone Number" id="phone" maxlength="10">
+        <input type="text" placeholder="Subject" name="subject">
+        <textarea placeholder="Your Message" name="message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
 
 
       <div id="visitor-count" style="text-align:center; margin: 30px 0; font-weight:bold;">
@@ -217,66 +219,73 @@ function toggleMenu() {
 }
 
 
- // contact form js 
-    document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("contactForm");
 
-        const form = document.querySelector("#contact form");
+    const nameMsg = document.createElement("div");
+    const phoneMsg = document.createElement("div");
+    const emailMsg = document.createElement("div");
+    const messageMsg = document.createElement("div");
 
-        
-        const nameMsg = document.createElement("div");
-        const emailMsg = document.createElement("div");
-        const messageMsg = document.createElement("div");
+    nameMsg.classList.add("validation-msg");
+    phoneMsg.classList.add("validation-msg");
+    emailMsg.classList.add("validation-msg");
+    messageMsg.classList.add("validation-msg");
 
-      
-        form.querySelector('input[type="text"]').after(nameMsg);
-        form.querySelector('input[type="email"]').after(emailMsg);
-        form.querySelector('textarea').after(messageMsg);
+    form.querySelector('#name').after(nameMsg);
+    form.querySelector('#phone').after(phoneMsg);
+    form.querySelector('#email').after(emailMsg);
+    form.querySelector('#message').after(messageMsg);
 
-        form.addEventListener("submit", function(e) {
-            e.preventDefault();
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-            const name = form.querySelector('input[type="text"]').value.trim();
-            const email = form.querySelector('input[type="email"]').value.trim();
-            const message = form.querySelector('textarea').value.trim();
+        const name = form.querySelector('#name').value.trim();
+        const phone = form.querySelector('#phone').value.trim();
+        const email = form.querySelector('#email').value.trim();
+        const message = form.querySelector('#message').value.trim();
 
-           
-            nameMsg.innerText = "";
-            emailMsg.innerText = "";
-            messageMsg.innerText = "";
+        // Reset messages
+        nameMsg.innerText = "";
+        phoneMsg.innerText = "";
+        emailMsg.innerText = "";
+        messageMsg.innerText = "";
 
-            let valid = true;
+        let valid = true;
 
-            
-            if(name === "") {
-                nameMsg.innerText = "Please enter your name";
-                valid = false;
-            }
+        if(name === "") {
+            nameMsg.innerText = "Please enter your name";
+            valid = false;
+        }
 
-            
-            if(email === "") {
-                emailMsg.innerText = "Please enter your email";
-                valid = false;
-            } else {
-                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-                if(!email.match(emailPattern)) {
-                    emailMsg.innerText = "Please enter a valid email address";
-                    valid = false;
-                }
-            }
+        if(phone === "") {
+            phoneMsg.innerText = "Please enter your phone number";
+            valid = false;
+        } else if(!/^\d{10}$/.test(phone)) {
+            phoneMsg.innerText = "Phone number must be 10 digits";
+            valid = false;
+        }
 
-            
-            if(message === "") {
-                messageMsg.innerText = "Please enter your message";
-                valid = false;
-            }
+        if(email === "") {
+            emailMsg.innerText = "Please enter your email";
+            valid = false;
+        } else if(!/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email)) {
+            emailMsg.innerText = "Please enter a valid email address";
+            valid = false;
+        }
 
-            if(valid) {
-                alert("Thank you! Your message has been sent successfully.");
-                form.reset();
-            }
-        });
+        if(message === "") {
+            messageMsg.innerText = "Please enter your message";
+            valid = false;
+        }
 
+        if(valid) {
+            alert("Thank you! Your message has been sent successfully.");
+            form.reset();
+        }
     });
+});
+
 
     let count = localStorage.getItem('visitCount') || 0;
       count++;

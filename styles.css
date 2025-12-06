@@ -442,88 +442,69 @@ header {
     }
 }
 
-
+/* --- Contact Section --- */
 #contact {
-    padding: 70px 20px;
-    background: #f7f7f7;
-    text-align: center;
+    padding: 50px 20px;
+    background: #eca7a7;
 }
 
 #contact h2 {
-    font-size: 32px;
+    text-align: center;
     margin-bottom: 40px;
-    color: #004e92;
+    font-size: 3rem;
+    color: #333;
 }
-
 
 #contact form {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
-    background: #ecd4d4;
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: all 0.4s ease;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-
-#contact input,
-#contact textarea {
-    width: 100%;
-    padding: 15px 15px 15px 15px;
-    margin: 20px 0;
+#contact form input,
+#contact form textarea {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    border: 2px solid #0e0b0b;
-    font-size: 18px;
-    background: transparent;
+    font-size: 1rem;
+    transition: all 0.3s ease;
     outline: none;
-    transition: 0.3s ease;
 }
 
-#contact input:focus,
-#contact textarea:focus {
-    border-color: #0f1314;
-    box-shadow: 0 0 20px rgba(17, 19, 20, 0.4);
+#contact form input:focus,
+#contact form textarea:focus {
+    border-color: #00aaff;
+    box-shadow: 0 0 8px rgba(0, 170, 255, 0.3);
 }
 
-#contact input::placeholder,
-#contact textarea::placeholder {
-    color: #f55858;
-    transition: all 0.3s ease;
+#contact form textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
-#contact input:focus::placeholder,
-#contact textarea:focus::placeholder {
-    color: transparent;
-}
-
-
-#contact button {
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-    background: #004e92;
-    color: white;
-    font-weight: 600;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
-
-#contact button:hover {
+#contact form button {
+    padding: 12px;
+    font-size: 1.1rem;
     background: #00aaff;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    color: #0f0c0c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-
-#contact form.success {
-    animation: popSuccess 0.5s ease forwards;
+#contact form button:hover {
+    background: #0072ff;
 }
+
+#contact form div {
+    font-size: 0.9rem;
+    color: red;
+    margin-top: 3px;
+}
+
 
 @keyframes popSuccess {
     0% { transform: scale(1); }
