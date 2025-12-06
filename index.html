@@ -20,11 +20,12 @@
     <nav class="navbar">
         <a href="#home">Home</a>
         <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
         <a href="#project">Project</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
     </div>
 </header>
@@ -32,6 +33,7 @@
 <div class="mobile-nav" id="mobileMenu">
     <a href="#home">Home</a>
     <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
     <a href="#project">Project</a>
     <a href="#contact">Contact</a>
 </div>
@@ -45,15 +47,14 @@
             <p class="fade-in delay">Welcome to my Portfolio - I build things, learn new skills, and solve problems.</p>
             <a href="#contact" class="btn fade-in delay-2">Contact Me!</a>
 
-            <a href="/docs/Taniya _khutar_Resume.pdf" download class="btn fade-in delay-2">Download Resume</a>
-            <a href="/docs/Taniya _khutar_Resume.pdf" target="_blank" class="btn fade-in delay-2">View Resume</a>
+            <a href="docs/Taniya _khutar_Resume.pdf" download class="btn fade-in delay-2">Download Resume</a>
+            <a href="docs/Taniya _khutar_Resume.pdf" target="_blank" class="btn fade-in delay-2">View Resume</a>
         </div>
     </section>
 
     
     <section id="skills">
         <h2>My Skills</h2>
-
         <div class="skill-item">
             <img src="https://blog.zegocloud.com/wp-content/uploads/2024/03/types-of-web-development-services.jpg">
             <h3>Web Development</h3>
@@ -75,30 +76,108 @@
         </div>
     </section>
 
+   <section id="education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="timeline">
+
+        <!-- ITEM 1 -->
+        <div class="timeline-item fade-in-section">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>BSc-IT</h3>
+                <p class="edu-year">2022-2025</p>
+                <p class="edu-college">Veena College Of Commerce And Science</p>
+                <p class="edu-desc">Major subjects: Web Dev, DBMS, PHP, Networking, AI & Android.</p>
+
+                <div class="progress-box">
+                    <span>CGPA: 9.92 / 10</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 95%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="timeline-item fade-in-section">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>HSC-Science</h3>
+                <p class="edu-year">2021-2022</p>
+                <p class="edu-college">Shailendra Degree College, Mumbai</p>
+
+                <div class="progress-box">
+                    <span>Percentage: 64%</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 64%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="timeline-item fade-in-section">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>SSC</h3>
+                <p class="edu-year">2019-2020</p>
+                <p class="edu-college">Shailendra Eductaion Society, Mumbai</p>
+
+                <div class="progress-box">
+                    <span>Percentage: 92.20%</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 92%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
     
   <section id="project">
     <h2>Projects</h2>
 
+    <div id="filter-bar" style="text-align:center; margin-bottom:20px;">
+    <input type="text" id="search" placeholder="Search projects..." style="padding:10px; width:250px; border-radius:5px; border:1px solid #ccc;">
+    <select id="category" style="padding:10px; border-radius:5px; border:1px solid #ccc;">
+        <option value="all">All</option>
+        <option value="php">PHP</option>
+        <option value="web">Web</option>
+        <option value="ai">AI</option>
+    </select>
+    </div>
+
+
     <div class="project-container">
-        <a href="https://github.com/Taniy12/Mycollection" target="_blank" class="project-link"></a>
-        <div class="project-item" style="background: linear-gradient(135deg, #004e92, #00aaff);">
-            <i class="fas fa-folder-open fa-4x"></i>
-            <h3>My Collection</h3>
-            <p>Virtual storage space for organizing user resources.</p>
-        </div>
+           <a href="projects/MyCollection.zip" download class="project-link">
+            <div class="project-item" data-category="php" style="background: linear-gradient(140deg, #bedd10, #00aaff);">
+                <i class="fas fa-folder-open fa-4x"></i>
+                <h3>My Collection</h3>
+                <p>A virtual storage space for organisers user resources. This project demonstrates front-end skills along with responsive designs and basic JS functionality</p>
+                <p>Download project folder</p>
+            </div>
+        </a>
 
-        <a href="https://github.com/Taniy12/Mindmatrix" target="_blank" class="project-link"></a> 
-        <div class="project-item" style="background: linear-gradient(135deg, #ff416c, #ff4b2b);">
-            <i class="fas fa-brain fa-4x"></i>
-            <h3>MindMatrix</h3>
-            <p>Mental health portal for therapist-patient communication.</p>
-        </div>
+        <a href="projects/mindmatrix.zip" download class="project-link">
+            <div class="project-item" data-category="web" style="background: linear-gradient(140deg, #bedd10, #00aaff);">
+                <i class="fas fa-brain fa-4x"></i>
+                <h3>MindMatrix</h3>
+                <p>Virtual interaction between therapist and patients through web-portal. Built with MySQL, PHP, and bit of AI integration</p>
+                <p>Download project folder</p>
+            </div>
+        </a>
 
-        <div class="project-item" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">
-            <i class="fas fa-robot fa-4x"></i>
-            <h3>AI Project</h3>
-            <p>AI-based solution for intelligent data processing and automation.</p>
-        </div>
+        <a href="projects///" download class="project-link">
+            <div class="project-item" data-category="ai" style="background: linear-gradient(135deg, #bedd10, #00aaff);">
+                <i class="fas fa-robot fa-4x"></i>
+                <h3>AI Projects</h3>
+                <p>Developed an AI-powered solution for data analysis, pattern recognition, and intelligent automation</p>
+                <p>Download project folder</p>
+            </div>
+        </a>
 
     </div>
  </section>
@@ -114,74 +193,140 @@
         </form>
     </section>
 
+
+      <div id="visitor-count" style="text-align:center; margin: 30px 0; font-weight:bold;">
+         Total Visitors: <span id="count">0</span>
+      </div>
+
 </main>
 
 
 <script>
 function toggleMenu() {
-    document.getElementById("mobileMenu").classList.toggle("show");
-}
-</script>
+    const mobileMenu = document.getElementById("mobileMenu");
+    const hamburger = document.getElementById("hamburger");
 
-<script>
-const form = document.querySelector("#contact form");
-
-const nameMsg = document.createElement("div");
-const emailMsg = document.createElement("div");
-const messageMsg = document.createElement("div");
-
-
-form.querySelector('input[type="text"]').after(nameMsg);
-form.querySelector('input[type="email"]').after(emailMsg);
-form.querySelector('textarea').after(messageMsg);
-
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const name = form.querySelector('input[type="text"]').value.trim();
-    const email = form.querySelector('input[type="email"]').value.trim();
-    const message = form.querySelector('textarea').value.trim();
-
-   es
-    nameMsg.innerText = "";
-    emailMsg.innerText = "";
-    messageMsg.innerText = "";
-
-    let valid = true;
-
-   
-    if(name === "") {
-        nameMsg.innerText = "Please enter your name";
-        valid = false;
-    }
-
-   
-    if(email === "") {
-        emailMsg.innerText = "Please enter your email";
-        valid = false;
-    } else {
-        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-        if(!email.match(emailPattern)) {
-            emailMsg.innerText = "Please enter a valid email address";
-            valid = false;
-        }
-    }
+    mobileMenu.classList.toggle("show");
 
     
-    if(message === "") {
-        messageMsg.innerText = "Please enter your message";
-        valid = false;
+    if (mobileMenu.classList.contains("show")) {
+        hamburger.innerHTML = '<i class="fas fa-times"></i>';   
+    } else {
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';    
     }
+}
 
-    if(valid) {
-       
-        alert("Thank you! Your message has been sent successfully.");
+
+ // contact form js 
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const form = document.querySelector("#contact form");
 
         
-        form.reset();
-    }
-});
+        const nameMsg = document.createElement("div");
+        const emailMsg = document.createElement("div");
+        const messageMsg = document.createElement("div");
+
+      
+        form.querySelector('input[type="text"]').after(nameMsg);
+        form.querySelector('input[type="email"]').after(emailMsg);
+        form.querySelector('textarea').after(messageMsg);
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = form.querySelector('input[type="text"]').value.trim();
+            const email = form.querySelector('input[type="email"]').value.trim();
+            const message = form.querySelector('textarea').value.trim();
+
+           
+            nameMsg.innerText = "";
+            emailMsg.innerText = "";
+            messageMsg.innerText = "";
+
+            let valid = true;
+
+            
+            if(name === "") {
+                nameMsg.innerText = "Please enter your name";
+                valid = false;
+            }
+
+            
+            if(email === "") {
+                emailMsg.innerText = "Please enter your email";
+                valid = false;
+            } else {
+                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                if(!email.match(emailPattern)) {
+                    emailMsg.innerText = "Please enter a valid email address";
+                    valid = false;
+                }
+            }
+
+            
+            if(message === "") {
+                messageMsg.innerText = "Please enter your message";
+                valid = false;
+            }
+
+            if(valid) {
+                alert("Thank you! Your message has been sent successfully.");
+                form.reset();
+            }
+        });
+
+    });
+
+    let count = localStorage.getItem('visitCount') || 0;
+      count++;
+      document.getElementById('count').innerText = count;
+      localStorage.setItem('visitCount', count);
+
+
+const searchInput = document.getElementById('search');
+const categorySelect = document.getElementById('category');
+const projects = document.querySelectorAll('.project-item');
+
+function filterProjects() {
+    const searchText = searchInput.value.toLowerCase();
+    const category = categorySelect.value;
+
+    projects.forEach(project => {
+        const title = project.querySelector('h3').innerText.toLowerCase();
+        const projectCategory = project.dataset.category; 
+        if ((title.includes(searchText) || searchText === '') &&
+            (category === 'all' || projectCategory === category)) {
+            project.style.display = 'block';
+        } else {
+            project.style.display = 'none';
+        }
+    });
+}
+
+searchInput.addEventListener('input', filterProjects);
+categorySelect.addEventListener('change', filterProjects); 
+
+
+
+// education-timeline
+const fadeSections = document.querySelectorAll(".fade-in-section");
+
+function revealOnScroll() {
+    fadeSections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            sec.classList.add("visible");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
 </script>
+
+
 
 
 <footer>
