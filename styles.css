@@ -17,7 +17,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: #ecc2c2;
+    background: #f1c1c1;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -64,8 +64,9 @@ header {
     z-index: 100;
 }
 
+
 .navbar a {
-    color: rgb(15, 2, 2);
+    color: rgb(10, 3, 0);
     text-decoration: none;
     font-size: 20px;
     transition: 0.3s ease;
@@ -240,7 +241,6 @@ header {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 
 .section-title {
     text-align: center;
